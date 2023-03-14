@@ -1,0 +1,63 @@
+<!--
+ * Project: leaderboard
+ * File: index.html
+ * Created: 3/14/23
+ * Author: Abdullah Al Mamun <mamun1214@gmail.com>
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Mamun <mamun1214@gmail.com> @dev-mamun">
+    <meta name="description"
+          content="The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Ruby, Ruby on Rails, Full-Stack, webpack, React, ReactJs">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+</head>
+<body>
+<main>
+    <h1>Leaderboard</h1>
+    <section>
+        <article class="scores">
+            <div class="title">
+                <h2>Recent Scores</h2>
+                <button type="button">Refresh</button>
+            </div>
+            <div class="score-list">
+                <ul>
+                    <li>Name: 100</li>
+                    <li>Name: 20</li>
+                    <li>Name: 50</li>
+                    <li>Name: 78</li>
+                    <li>Name: 125</li>
+                    <li>Name: 77</li>
+                    <li>Name: 42</li>
+                </ul>
+            </div>
+        </article>
+        <article class="score-form">
+            <div class="title">
+                <h2>Add Your Score</h2>
+            </div>
+            <div class="form">
+                <form>
+                    <label for="name"></label>
+                    <input type="text" id="name" placeholder="Your name">
+                    <label for="score"> </label>
+                    <input type="number" id="score" placeholder="Your score">
+                    <button type="submit" class="form-submit">submit</button>
+                </form>
+            </div>
+        </article>
+    </section>
+</main>
+</body>
+</html>
