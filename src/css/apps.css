@@ -1,0 +1,89 @@
+/********************************************
+ * Project: leaderboard
+ * File: apps.css
+ * Created: 3/14/23
+ * Author: Abdullah Al Mamun <mamun1214@gmail.com>
+ ********************************************/
+@import "common.css";
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 650px;
+}
+
+main > h1 {
+  width: 100%;
+  text-align: left;
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.scores {
+  width: 50%;
+  margin-right: 25px;
+  padding: 10px;
+}
+
+.score-list {
+  border: 2px solid black;
+}
+
+.score-list > ul {
+  list-style: none;
+}
+
+.score-list > ul > li {
+  padding: 10px;
+  text-align: left;
+}
+
+.score-list li:nth-of-type(odd) {
+  background-color: rgb(255, 255, 255);
+}
+
+.score-list li:nth-of-type(even) {
+  background-color: rgb(235, 235, 235);
+}
+
+.score-form {
+  width: 50%;
+  padding: 10px;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 15px 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.form > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
