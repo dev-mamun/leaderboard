@@ -4,21 +4,15 @@
  * Created: 3/15/23
  * Author: Abdullah Al Mamun <mamun1214@gmail.com>
  ****************************************** */
-import Notification from "./Notification";
+import Notification from './Notification';
 
 class Apps {
   #_notify;
 
   constructor() {
-    this.items = [];
-    this.controller = {};
-    this.baseUrl = "https://us-central1-js-capstone-backend.cloudfunctions.net/api/";
+    this.baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
     this.#events();
-    this.#_notify = new Notification;
-  }
-
-  set id($val) {
-    this._id = $val;
+    this.#_notify = new Notification();
   }
 
   set success($msg) {
@@ -30,14 +24,11 @@ class Apps {
   }
 
   get id() {
-    if (typeof this._id === 'undefined') {
-      if (this.getItem('ID').length === 0) {
-        return this.getId();
-      }
-      return this.getItem('ID');
+    if (this.getItem('ID').length === 0) {
+      this.getId();
     }
-    return this._id;
-  };
+    return this.getItem('ID');
+  }
 
   #events = () => {
     const $form = document.querySelector('form');
@@ -55,14 +46,12 @@ class Apps {
   };
 
   getId = () => {
-    const $url = this.baseUrl + "games/";
+    const $url = `${this.baseUrl}games/`;
     const $inputs = { name: 'Leaderboard Game' };
     const $response = this.#httpRequest($url, 'POST', $inputs);
     $response.then((res) => {
-      const $id = res.result.split(" ");
-      this.id = $id[3];
-      this.#saveStorage('ID', this.id);
-      return this.id;
+      const [, , , $id] = res.result.split(' ');
+      this.#saveStorage('ID', $id);
     }).catch((error) => {
       throw new Error(error);
     });
@@ -82,7 +71,7 @@ class Apps {
 
   getScore = () => {
     const $id = this.id;
-    const $url = this.baseUrl + `games/${$id}/scores/`;
+    const $url = `${this.baseUrl}games/${$id}/scores/`;
     const $response = this.#httpRequest($url, 'GET');
     $response.then((res) => {
       this.#addItem(res.result);
@@ -93,15 +82,14 @@ class Apps {
 
   saveScore = ($inputs) => {
     $inputs = {
-      "user": $inputs.get('user'),
-      "score": $inputs.get('score')
-    }
+      user: $inputs.get('user'),
+      score: $inputs.get('score'),
+    };
     const $id = this.id;
-    const $url = this.baseUrl + `games/${$id}/scores/`;
+    const $url = `${this.baseUrl}games/${$id}/scores/`;
     const $response = this.#httpRequest($url, 'POST', $inputs);
     $response.then((res) => {
       this.success = res.result;
-      //this.getScore();
     }).catch((error) => {
       throw new Error(error);
     });
@@ -114,28 +102,30 @@ class Apps {
     }
     return [];
   };
+
   #saveStorage = ($key, $items) => {
     localStorage.setItem($key, JSON.stringify($items));
   };
+
   #httpRequest = async ($url, $method, $inputs) => {
-    const method = method || 'GET';
-    const inputs = inputs || '';
     const response = await fetch(
-        $url,
-        {
-          method: $method,
-          body: JSON.stringify($inputs), // string or object
-          headers: {
-            'Content-Type': 'application/json',
-          },
+      $url,
+      {
+        method: $method,
+        body: JSON.stringify($inputs), // string or object
+        headers: {
+          'Content-Type': 'application/json',
         },
+      },
     );
+    let $promise;
     if (response.ok) {
       const result = await response.json();
-      return Promise.resolve(result);
+      $promise = Promise.resolve(result);
     } else {
-      return Promise.reject(`HTTP error! Status: ${response.status}`);
+      $promise = Promise.reject(new Error(`HTTP error! Status: ${response.status}`));
     }
+    return $promise;
   }
 }
 
