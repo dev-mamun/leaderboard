@@ -6,3 +6,11 @@
  ****************************************** */
 
 import './css/apps.css';
+import './modules/Apps';
+import Apps from "./modules/Apps";
+
+window.addEventListener('load', () => {
+  const game = new Apps();
+  //game.getId();
+  game.getScore();
+});
