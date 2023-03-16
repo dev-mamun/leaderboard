@@ -5,6 +5,7 @@
  * Author: Abdullah Al Mamun <mamun1214@gmail.com>
  ********************************************/
 @import "common.css";
+@import "toastr";
 
 main {
   display: flex;
@@ -19,6 +20,10 @@ main > h1 {
   text-align: left;
   margin-top: 25px;
   margin-bottom: 5px;
+  color: transparent;
+  background: #666;
+  -webkit-background-clip: text;
+  text-shadow: 0 3px 3px rgba(255, 255, 255, 0.5);
 }
 
 section {
@@ -27,6 +32,12 @@ section {
   justify-content: space-between;
   gap: 20px;
   width: 100%;
+  border: 1px solid #e3e1e1;
+  min-height: 250px;
+  border-radius: 5px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .scores {
@@ -36,11 +47,16 @@ section {
 }
 
 .score-list {
-  border: 2px solid black;
+  border: 1px solid #b8e8b8;
+  border-radius: 5px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .score-list > ul {
   list-style: none;
+  border-radius: 5px;
 }
 
 .score-list > ul > li {
@@ -49,11 +65,25 @@ section {
 }
 
 .score-list li:nth-of-type(odd) {
-  background-color: rgb(255, 255, 255);
+  background-color: #fdfdfe;
 }
 
 .score-list li:nth-of-type(even) {
-  background-color: rgb(235, 235, 235);
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.score-list li:first-child {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.score-list li:last-child {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.score-list > ul > li:hover {
+  background-color: #6c757d;
 }
 
 .score-form {
@@ -65,7 +95,7 @@ section {
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 35px;
   margin: 15px 0;
   justify-content: flex-start;
   align-items: flex-start;
@@ -77,7 +107,14 @@ section {
   flex-direction: column;
   gap: 10px;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  border: 1px solid lightgreen;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 27px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .form > form {
@@ -86,4 +123,9 @@ section {
   gap: 10px;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+input {
+  border: 1px solid lightgrey;
+  border-radius: 3px;
 }

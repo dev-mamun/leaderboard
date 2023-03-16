@@ -51,8 +51,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[//]: # (- [Live Demo Link]&#40;https://dev-mamun.github.io/leaderboard/dist/&#41;)
-- Comming Soon .......
+- [Live Demo Link](https://dev-mamun.github.io/leaderboard/dist/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
