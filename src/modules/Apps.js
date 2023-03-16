@@ -78,7 +78,7 @@ class Apps {
     $response.then((res) => {
       this.#addItem(res.result);
     }).catch((error) => {
-      throw new Error(error);
+      toastr.error(error);
     });
   };
 
