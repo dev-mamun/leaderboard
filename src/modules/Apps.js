@@ -6,6 +6,8 @@
  ****************************************** */
 import Notification from './Notification';
 
+const toastr = require('toastr');
+
 class Apps {
   #_notify;
 
@@ -89,9 +91,10 @@ class Apps {
     const $url = `${this.baseUrl}games/${$id}/scores/`;
     const $response = this.#httpRequest($url, 'POST', $inputs);
     $response.then((res) => {
-      this.success = res.result;
+      toastr.success(res.result);
+      this.getScore();
     }).catch((error) => {
-      throw new Error(error);
+      toastr.error(error);
     });
   };
 
