@@ -21,11 +21,9 @@ main > h1 {
   margin-top: 25px;
   margin-bottom: 5px;
   color: transparent;
-  background: #666666;
+  background: #666;
   -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+  text-shadow: 0 3px 3px rgba(255, 255, 255, 0.5);
 }
 
 section {
@@ -37,9 +35,9 @@ section {
   border: 1px solid #e3e1e1;
   min-height: 250px;
   border-radius: 5px;
-  box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.1);
-  -webkit-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .scores {
@@ -51,9 +49,9 @@ section {
 .score-list {
   border: 1px solid #b8e8b8;
   border-radius: 5px;
-  box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.1);
-  -webkit-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .score-list > ul {
@@ -66,16 +64,12 @@ section {
   text-align: left;
 }
 
-.score-list > ul > li:hover {
-  background-color: #6c757d;
-}
-
 .score-list li:nth-of-type(odd) {
   background-color: #fdfdfe;
 }
 
 .score-list li:nth-of-type(even) {
-  background-color: rgba(0, 0, 0, .075);
+  background-color: rgba(0, 0, 0, 0.075);
 }
 
 .score-list li:first-child {
@@ -86,6 +80,10 @@ section {
 .score-list li:last-child {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+
+.score-list > ul > li:hover {
+  background-color: #6c757d;
 }
 
 .score-form {
@@ -114,9 +112,9 @@ section {
   border-radius: 5px;
   padding: 8px;
   margin-top: 27px;
-  box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.1);
-  -webkit-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .form > form {
@@ -125,4 +123,9 @@ section {
   gap: 10px;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+input {
+  border: 1px solid lightgrey;
+  border-radius: 3px;
 }
